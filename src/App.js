@@ -5,16 +5,16 @@ import Signin from './components/Signin.tsx';
 import Signup from './components/Signup.tsx';
 import Account from './components/Account.tsx';
 import { AuthContextProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <div className="text-center text-3xl font-bold">
-      <h1>Application</h1>
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         </Routes>
       </AuthContextProvider>
     </div>

@@ -1,29 +1,28 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 const Signin = () => {
-
-  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const { createUser } = UserAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const { signin } = UserAuth();
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
     try {
-      await createUser(email, password);
+      await signin(email, password);
+      navigate('/account');
     } catch (e) {
       setError(e.massage);
       console.log(e.massage);
     }
   }
 
-
-  
   return (
     <div className='max-w-[700px] max-auto m-16 p-4'>
       <div>
