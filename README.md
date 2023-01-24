@@ -1,7 +1,11 @@
 # Getting Started with Create React App And FireBase
 
 This project was bootstrapped with React at Front-End and Firebase at Database.
+Auth Project create by reactJS.
+First Signup in Project and then Signin. 
 
+### `npm install`
+First npm install and then run
 ### `npm start`
 
 Runs the app in the development mode.\
