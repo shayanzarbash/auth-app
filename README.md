@@ -1,8 +1,9 @@
 # Getting Started with Create React App And FireBase
 
-This project was bootstrapped with React at Front-End and Firebase at Database.
-Auth Project create by reactJS.
-First Signup in Project and then Signin. 
+This project was bootstrapped with React at Front-End and Firebase at Database.\
+Auth Project create by reactJS.\
+First Signup in Project and then Signin.\
+The Project use Tailwind,TypeScript. 
 
 ### `npm install`
 First npm install and then run
