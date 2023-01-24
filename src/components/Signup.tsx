@@ -8,6 +8,9 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const { createUser } = UserAuth();
 const navigate = useNavigate();
@@ -25,25 +28,66 @@ const navigate = useNavigate();
 
 
   return (
-    <div className='max-w-[700px] max-auto m-16 p-4'>
-      <div>
-        <h1 className='text-2xl font-bold py-2'>sign in your account</h1>
-        <p className='py-2 font-normal'>
-          dont have account yet ?
-          <Link className='underline' to='/'>sign in</Link>
-        </p>
+    <div className="w-full h-screen flex justify-center items-center bg-gray-800">
+      <div className="w-1/2 h-3/4 shadow-lg rounded-md bg-white p-8 flex flex-col">
+        <h2 className="text-center font-medium text-2xl mb-4">
+          ثبت نام
+        </h2>
+        <div className="flex flex-1 flex-col justify-evenly">
+          <input
+            className="border-2 outline-none p-2 rounded-md"
+            type="email"
+            placeholder="نام"
+            value={firstname}
+            onChange={(e) => { setFirstname(e.target.value); }}
+          />
+          <input
+            className="border-2 outline-none p-2 rounded-md"
+            type="email"
+            placeholder="نام خانوادگی"
+            value={lastname}
+            onChange={(e) => { setLastname(e.target.value); }}
+          />
+          <input
+            className="border-2 outline-none p-2 rounded-md"
+            type="email"
+            placeholder="ایمیل"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className="border-2 outline-none p-2 rounded-md"
+            type="رمز عبور"
+            placeholder="*******" value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button
+            className="
+             flex justify-center
+             p-2 rounded-md w-1/2 self-center
+             bg-gray-800  text-white 
+             hover:bg-gray-700"
+            onClick={handleSubmit}
+          >
+             {
+              isLoading ?
+                <div className="mr-2 w-5 h-5 border-l-2 rounded-full animate-spin" /> : null
+            }            
+            <span>
+            ثبت نام
+            </span>
+          </button>
+        </div>
+        <div className="text-center text-sm">
+          ?
+          <Link to="/signin">
+            <span className="font-medium text-gray-800 ml-1">
+              ورود
+            </span>
+          </Link>
+        </div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium text-left'>Email</label>
-          <input type='email' onChange={(e) => setEmail(e.target.value)} className='border p-3' />
-        </div>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium text-left'>password</label>
-          <input type='password' onChange={(e) => setPassword(e.target.value)} className='border p-3' />
-        </div>
-        <button className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">sign up</button>
-      </form>
     </div>
   )
 }

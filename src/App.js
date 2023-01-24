@@ -12,8 +12,9 @@ function App() {
     <div className="text-center text-3xl font-bold">
       <AuthContextProvider>
         <Routes>
-          <Route path="/" element={<Signin />} />
+          <Route path="/" element={<Signup />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         </Routes>
       </AuthContextProvider>
