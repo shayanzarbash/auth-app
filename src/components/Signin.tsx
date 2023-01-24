@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth } from '../context/AuthContext';
+import { UserAuth } from '../context/AuthContext.jsx';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -14,13 +14,14 @@ const Signin = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
-    try {
-      await signin(email, password);
-      navigate('/account');
-    } catch (e) {
-      setError(e.massage);
-      console.log(e.massage);
-    }
+    
+      try {
+        await signin(email, password);
+        navigate('/account');
+      } catch (e) {
+        setError(e.massage);
+        console.log(e.massage);
+      }
   }
 
   return (

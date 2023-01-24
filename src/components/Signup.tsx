@@ -13,13 +13,14 @@ const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { createUser } = UserAuth();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
     try {
       await createUser(email, password);
-      navigate('/account');
+      alert('signup');
+      navigate('/signin');
     } catch (e) {
       setError(e.massage);
       console.log(e.massage);

@@ -1,11 +1,10 @@
-import './App.css';
 import './styles/main.css';
 import { Route, Routes } from 'react-router-dom';
 import Signin from './components/Signin.tsx';
 import Signup from './components/Signup.tsx';
 import Account from './components/Account.tsx';
-import { AuthContextProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import { AuthContextProvider } from './context/AuthContext.jsx';
+import ProtectedRoute from './components/ProtectedRoute.tsx';
 
 function App() {
   return (
