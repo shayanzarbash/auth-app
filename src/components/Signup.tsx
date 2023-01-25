@@ -23,10 +23,9 @@ const Signup = () => {
       navigate('/signin');
     } catch (e) {
       setError(e.massage);
-      console.log(e.massage);
+      console.log("msg",e.massage);
     }
   }
-
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-800">
