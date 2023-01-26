@@ -6,22 +6,23 @@ const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const navigate = useNavigate();
-
   const { signin } = UserAuth();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
-    
-      try {
-        await signin(email, password);
-        navigate('/account');
-      } catch (e) {
-        setError(e.massage);
-        console.log(e.massage);
-      }
+    if(email.length === 0){
+      alert('ایمیل وارد شود');
+        } else if(password.length === 0){
+      alert('رمز وارد شود');
+    } else {
+      await signin(email, password);
+      navigate('/account');
+    }  
   }
 
   return (
@@ -34,7 +35,7 @@ const Signin = () => {
           <input
             className="border-2 outline-none p-2 rounded-md"
             type="email"
-            placeholder="Enter Your Email"
+            placeholder="ایمیل"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -52,6 +53,10 @@ const Signin = () => {
             bg-gray-800  text-white hover:bg-gray-800"
             onClick={handleSubmit}
           >
+             {
+              isLoading ?
+                <div className="mr-2 w-5 h-5 border-l-2 rounded-full animate-spin" /> : null
+            }  
             <span>
             ورود
             </span>

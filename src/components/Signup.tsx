@@ -17,10 +17,17 @@ const Signup = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
+
     try {
-      await createUser(email, password);
-      alert('signup');
-      navigate('/signin');
+      if(email.length === 0){
+        alert('ایمیل وارد شود');
+      } else if(password.length === 0){
+        alert('رمز وارد شود');
+      } else {
+        await createUser(email, password);
+        alert('signup');
+        navigate('/signin');
+      }
     } catch (e) {
       setError(e.massage);
       console.log("msg",e.massage);
@@ -58,7 +65,8 @@ const Signup = () => {
           <input
             className="border-2 outline-none p-2 rounded-md"
             type="رمز عبور"
-            placeholder="*******" value={password}
+            placeholder="*******"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
