@@ -8,8 +8,6 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const { createUser } = UserAuth();
@@ -40,21 +38,7 @@ const Signup = () => {
         <h2 className="text-center font-medium text-2xl mb-4">
           ثبت نام
         </h2>
-        <div className="flex flex-1 flex-col justify-evenly">
-          <input
-            className="border-2 outline-none p-2 rounded-md"
-            type="email"
-            placeholder="نام"
-            value={firstname}
-            onChange={(e) => { setFirstname(e.target.value); }}
-          />
-          <input
-            className="border-2 outline-none p-2 rounded-md"
-            type="email"
-            placeholder="نام خانوادگی"
-            value={lastname}
-            onChange={(e) => { setLastname(e.target.value); }}
-          />
+        <div className="flex flex-1 flex-col justify-evenly">         
           <input
             className="border-2 outline-none p-2 rounded-md"
             type="email"
