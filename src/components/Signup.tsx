@@ -17,9 +17,9 @@ const Signup = () => {
     setError('');
 
     try {
-      if(email.length === 0){
+      if (email.length === 0) {
         alert('ایمیل وارد شود');
-      } else if(password.length === 0){
+      } else if (password.length === 0) {
         alert('رمز وارد شود');
       } else {
         await createUser(email, password);
@@ -28,7 +28,7 @@ const Signup = () => {
       }
     } catch (e) {
       setError(e.massage);
-      console.log("msg",e.massage);
+      console.log("msg", e.massage);
     }
   }
 
@@ -38,7 +38,7 @@ const Signup = () => {
         <h2 className="text-center font-medium text-2xl mb-4">
           ثبت نام
         </h2>
-        <div className="flex flex-1 flex-col justify-evenly">         
+        <div className="flex flex-1 flex-col justify-evenly">
           <input
             className="border-2 outline-none p-2 rounded-md"
             type="email"
@@ -53,7 +53,6 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <button
             className="
              flex justify-center
@@ -62,26 +61,26 @@ const Signup = () => {
              hover:bg-gray-700"
             onClick={handleSubmit}
           >
-             {
+            {
               isLoading ?
                 <div className="mr-2 w-5 h-5 border-l-2 rounded-full animate-spin" /> : null
-            }            
+            }
             <span>
-            ثبت نام
+              ثبت نام
             </span>
           </button>
         </div>
         <div className="text-center text-sm">
-        عضو هستید ؟
-                  <Link to="/signin">
+          عضو هستید ؟
+          <Link to="/signin">
             <span className="font-medium text-gray-800 ml-1">
-ورود
+              ورود
             </span>
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Signup;
