@@ -72,10 +72,10 @@ const Signup = () => {
           </button>
         </div>
         <div className="text-center text-sm">
-          ?
-          <Link to="/signin">
+        عضو هستید ؟
+                  <Link to="/signin">
             <span className="font-medium text-gray-800 ml-1">
-              ورود
+ورود
             </span>
           </Link>
         </div>
