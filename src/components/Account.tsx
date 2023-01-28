@@ -69,7 +69,7 @@ const Account = () => {
           </nav>
         </div>
       </div>
-      <p className='mt-8'>ایمیل شما :{user && user.email}</p>
+      <h3 className='mt-8'>ایمیل شما :{user && user.email}</h3>
     </div>
   )
 }

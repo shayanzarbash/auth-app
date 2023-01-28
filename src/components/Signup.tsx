@@ -9,16 +9,20 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
   const { createUser } = UserAuth();
   const navigate = useNavigate();
+
+  const isValidEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
-
+    console.log("saved to firestore , input: " + email)
     try {
       if (email.length === 0) {
-        alert('ایمیل وارد شود');
+        alert('ایمیل خالی نباشد');
+      } else if (!email.match(isValidEmail)){
+        alert('ایمیل صحیح وارد شود');
       } else if (password.length === 0) {
         alert('رمز وارد شود');
       } else if (password.length < 6) {

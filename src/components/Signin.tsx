@@ -7,16 +7,19 @@ const Signin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
   const navigate = useNavigate();
   const { signin } = UserAuth();
+
+  const isValidEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError('');
     try {
       if (email.length === 0) {
-        alert('ایمیل وارد شود');
+        alert('ایمیل خالی نباشد');
+      } else if (!email.match(isValidEmail)){
+        alert('ایمیل صحیح وارد شود');
       } else if (password.length === 0) {
         alert('رمز وارد شود');
       } else {
@@ -33,7 +36,7 @@ const Signin = () => {
   }
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-gray-900">
+    <div className="w-full h-screen flex justify-center items-center bg-gray-800">
       <div className="w-1/2 h-1/2 shadow-lg rounded-md bg-white p-8 flex flex-col">
         <h2 className="text-center font-medium text-2xl mb-4">
           ورود
