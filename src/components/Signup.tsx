@@ -23,18 +23,18 @@ const Signup = () => {
         alert('رمز وارد شود');
       } else {
         await createUser(email, password);
-        alert('signup');
+        alert('ثبت نام انجام شد');
         navigate('/signin');
       }
     } catch (e) {
-      setError(e.massage);
+      setError(e.massage);     
       console.log("msg", e.massage);
     }
   }
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-800">
-      <div className="w-1/2 h-3/4 shadow-lg rounded-md bg-white p-8 flex flex-col">
+      <div className="w-1/2 h-1/2 shadow-lg rounded-md bg-white p-8 flex flex-col">
         <h2 className="text-center font-medium text-2xl mb-4">
           ثبت نام
         </h2>

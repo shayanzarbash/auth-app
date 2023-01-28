@@ -25,6 +25,9 @@ const Signin = () => {
       }
     } catch (e) {
       setError(e.massage);
+      if(e.massage === undefined){
+        alert("کاربری یافت نشد")
+      }
       console.log(e.massage)
     }
   }
