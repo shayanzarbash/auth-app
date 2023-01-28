@@ -21,13 +21,15 @@ const Signup = () => {
         alert('ایمیل وارد شود');
       } else if (password.length === 0) {
         alert('رمز وارد شود');
+      } else if (password.length < 6) {
+        alert('رمز باید شش رقم با بیشتر باشد');
       } else {
         await createUser(email, password);
         alert('ثبت نام انجام شد');
         navigate('/signin');
       }
     } catch (e) {
-      setError(e.massage);     
+      setError(e.massage);
       console.log("msg", e.massage);
     }
   }

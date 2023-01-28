@@ -49,7 +49,7 @@ const Account = () => {
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                      href="#pablo"
+                      href="###"
                     >
                       Discover
                     </a>
@@ -57,8 +57,8 @@ const Account = () => {
                   <li className="nav-item">
                     <a
                     onClick={handleLogout}
-                      className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-red-200 hover:opacity-75"
-                      href="#pablo"
+                      className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-red-600 hover:opacity-75"
+                      href="###"
                     >
                       Logout
                     </a>
