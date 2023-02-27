@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ const Account = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
-  
+
   const handleLogout = async () => {
     try {
       await logout();
@@ -53,10 +53,10 @@ const Account = () => {
                     >
                       Discover
                     </a>
-                  </li>                  
+                  </li>
                   <li className="nav-item">
                     <a
-                    onClick={handleLogout}
+                      onClick={handleLogout}
                       className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-red-600 hover:opacity-75"
                       href="###"
                     >
@@ -69,7 +69,9 @@ const Account = () => {
           </nav>
         </div>
       </div>
+      <div>
       <h3 className='mt-8'>ایمیل شما :{user && user.email}</h3>
+      </div>
     </div>
   )
 }

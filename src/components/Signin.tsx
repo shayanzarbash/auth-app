@@ -25,6 +25,9 @@ const Signin = () => {
       } else {
         await signin(email, password);
         navigate('/account');
+        setTimeout(()=> {
+          console.log('loginUser')
+        }, 100);
       }
     } catch (e) {
       setError(e.massage);
@@ -55,7 +58,6 @@ const Signin = () => {
             placeholder="*******" value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <button
             className="
             flex justify-center
