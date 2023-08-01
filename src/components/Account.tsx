@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import Forms from './Forms.tsx';
 
 const Account = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,7 +71,8 @@ const Account = () => {
         </div>
       </div>
       <div>
-      <h3 className='mt-8'>ایمیل شما :{user && user.email}</h3>
+        <h3 className='mt-8'>ایمیل شما :{user && user.email}</h3>
+        <Forms />
       </div>
     </div>
   )
