@@ -1,9 +1,12 @@
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Signin from './components/Signin.tsx';
+import Signup from './components/Signup.tsx';
+import Account from './components/Account.tsx';
+import { AuthContextProvider } from './context/AuthContext.jsx';
+import ProtectedRoute from './components/ProtectedRoute.tsx';
 import './styles/main.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 function App() {
-
-
   return (
     <div className="wrapper">
       <h1>Application App</h1>
